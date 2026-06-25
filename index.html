@@ -284,6 +284,29 @@
   td.ftcol .cd{color:var(--ink2);}
   .cmp-note{font-size:11.5px; color:var(--grey); margin-top:14px; line-height:1.6;}
 
+  /* ---------- cloud / hybrid band ---------- */
+  .cloud{margin-top:26px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff;}
+  .cloud-top{display:flex; gap:16px; align-items:flex-start; padding:22px 24px 18px; border-top:4px solid var(--blue);}
+  .cloud-ico{width:46px;height:46px;border-radius:11px;background:var(--blue-t);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .cloud-ico svg{stroke:var(--blue);}
+  .cloud-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin:0 0 5px;}
+  .cloud-top h3{font-size:19px;font-weight:800;color:var(--ink);margin:0 0 8px;}
+  .cloud-lede{font-size:14px;color:var(--ink2);margin:0;max-width:82ch;}
+  .cloud-split{display:grid;grid-template-columns:1fr 1.3fr;border-top:1px solid var(--line);}
+  @media(max-width:760px){.cloud-split{grid-template-columns:1fr;}}
+  .cl-col{padding:18px 24px;}
+  .cl-col.aws{background:var(--tint); border-right:1px solid var(--line);}
+  .cl-k{font-size:12px;font-weight:800;color:var(--ink);margin-bottom:7px;}
+  .cl-col.aws .cl-k{color:var(--grey);}
+  .cl-col p{font-size:13px;color:var(--ink2);margin:0 0 12px;}
+  .cl-col .prods{margin:0;}
+  .cloud-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;padding:15px 24px;background:var(--navy);color:#c9d4e3;font-size:13px;}
+  .cloud-foot b{color:#fff;}
+  .cloud-foot .src{display:flex;align-items:center;gap:7px;font-weight:700;white-space:nowrap;}
+  .cloud-foot .src a{color:#fff;text-decoration:underline;}
+  .cloud-foot .src svg{color:#ff8f84;flex:0 0 auto;}
+  @media print{ .cloud-top,.cloud-foot,.cl-col{break-inside:avoid;} }
+
   .reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease;}
   .reveal.in{opacity:1; transform:none;}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;} .snap-h .pulse{animation:none;}}
@@ -326,6 +349,7 @@
       <a href="#incident">Incident</a>
       <a href="#anatomy">Anatomy</a>
       <a href="#blueprint">Blueprint</a>
+      <a href="#cloud">Cloud</a>
       <a href="#phases">Phases</a>
       <a href="#proof">Proof</a>
       <a href="#compete">Edge</a>
@@ -525,6 +549,32 @@
         <p class="pl">Fortinet</p>
         <div class="prods"><span class="prod">Forti<span class="x">DLP</span></span><span class="prod">Forti<span class="x">Gate</span> DLP</span><span class="prod">Forti<span class="x">CNAPP</span></span><span class="prod">Forti<span class="x">Guard</span></span></div>
         <div class="frmwks"><span class="fw">SWIFT 2.5A</span><span class="fw">PCI 3&amp;4</span><span class="fw">ISO A.8.12/A.8.13</span><span class="fw">NIST PR.DS/RC</span></div>
+      </div>
+    </div>
+
+    <div class="cloud reveal" id="cloud">
+      <div class="cloud-top">
+        <div class="cloud-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.6A3.5 3.5 0 0 1 18 18H7Z"/></svg></div>
+        <div>
+          <p class="cloud-eyebrow">Hybrid by design</p>
+          <h3>Covers the whole estate &mdash; on&#8209;premise and AWS cloud</h3>
+          <p class="cloud-lede">Banking workloads &mdash; including card and payment platforms &mdash; increasingly run in public cloud. Under the AWS Shared Responsibility Model, AWS secures the cloud; the bank stays responsible for everything <em>in</em> it &mdash; and most exposures come from that side: misconfigured data stores, over&#8209;permissioned identities, unprotected workloads. Fortinet secures the bank&rsquo;s half consistently, on&#8209;premise and in AWS, applying the same six control domains.</p>
+        </div>
+      </div>
+      <div class="cloud-split">
+        <div class="cl-col aws">
+          <div class="cl-k">AWS secures &mdash; security <b>of</b> the cloud</div>
+          <p>Physical data centers, hardware, the global network and managed&#8209;service infrastructure.</p>
+        </div>
+        <div class="cl-col ftnt">
+          <div class="cl-k">Fortinet secures the bank&rsquo;s side &mdash; security <b>in</b> the cloud</div>
+          <p>Cloud posture &amp; configuration, identities, segmentation, workloads, apps/APIs and data &mdash; the same controls, applied inside AWS.</p>
+          <div class="prods"><span class="prod">Forti<span class="x">Gate</span> CNF</span><span class="prod">Forti<span class="x">CNAPP</span></span><span class="prod">Forti<span class="x">Web</span> Cloud</span><span class="prod">Forti<span class="x">Gate</span> VM</span><span class="prod">Forti<span class="x">Client</span></span></div>
+        </div>
+      </div>
+      <div class="cloud-foot">
+        <span><b>Why it matters here:</b> FortiCNAPP continuously finds the cloud misconfigurations and exposed data stores that lead to card&#8209;data leaks &mdash; closing the cloud&#8209;side gap as firmly as the on&#8209;premise one.</span>
+        <span class="src"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg> <a href="https://www.fortinet.com/customers/welab" target="_blank" rel="noopener">Case: WeLab virtual bank on AWS</a></span>
       </div>
     </div>
 
@@ -739,6 +789,12 @@
             <td><span class="st part"><span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M5 12h14"/></svg></span>Premium</span><span class="cd">Better than multi&#8209;vendor, priced high.</span></td>
           </tr>
           <tr>
+            <td class="crit">Hybrid &amp; public&#8209;cloud (AWS) protection</td>
+            <td class="ftcol"><span class="st full"><span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>One Fabric</span><span class="cd">Same policy spans data center &amp; AWS; FortiGate CNF + FortiCNAPP native.</span></td>
+            <td><span class="st gap"><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M6 6l12 12M18 6 6 18"/></svg></span>Split</span><span class="cd">Separate cloud tools &amp; console from on&#8209;prem.</span></td>
+            <td><span class="st part"><span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M5 12h14"/></svg></span>Partial</span><span class="cd">Cloud add&#8209;ons, uneven parity with on&#8209;prem.</span></td>
+          </tr>
+          <tr>
             <td class="crit">Built for sector&#8209;wide rollout (D&#8209;SIB &rarr; MFI)</td>
             <td class="ftcol"><span class="st full"><span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>Designed for it</span><span class="cd">One platform scales every tier; local channel ready.</span></td>
             <td><span class="st gap"><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3.5"><path d="M6 6l12 12M18 6 6 18"/></svg></span>Hard</span><span class="cd">Difficult to standardize across many banks.</span></td>
@@ -820,6 +876,14 @@
             <td><span class="id">Req 3, Req 4, Req 12.10.1</span></td>
             <td><span class="id">A.8.10&ndash;8.13</span></td>
             <td><span class="id">PR.DS, RC.*</span></td>
+          </tr>
+          <tr>
+            <td class="dom-cell">D7 &mdash; Cloud &amp; hybrid (AWS)<small>posture, workloads, data</small></td>
+            <td>Cloud / outsourcing &amp; third&#8209;party risk; data confidentiality (draft Cybersecurity Law)</td>
+            <td><span class="id">1.1, 2.1, 2.3</span></td>
+            <td><span class="id">Req 2, 6, 11; App.&nbsp;A1 (cloud)</span></td>
+            <td><span class="id">A.5.23, A.8.20&ndash;8.23</span></td>
+            <td><span class="id">GV.SC, ID.AM, PR.IR</span></td>
           </tr>
         </tbody>
       </table>
