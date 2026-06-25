@@ -1,0 +1,1 @@
+# ftnt_ransomeware_Preventive_june26
